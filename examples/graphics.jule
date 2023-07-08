@@ -1,4 +1,4 @@
-use colorify::{Style, Graphic, colorify}
+use colorify::colorify::{Style, Graphic, colorify}
 
 pub fn graphics() {
   let style = Style{

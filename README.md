@@ -18,7 +18,7 @@ To use the **colorify** package, follow these steps:
 Below is an example showcasing the basic usage of the **colorify** package:
 ```
 // include the package
-use colorify::{Style, Foreground, colorify}
+use colorify::colorify::{Style, Foreground, colorify}
 
 fn main() {
 

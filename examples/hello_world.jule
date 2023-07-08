@@ -1,4 +1,4 @@
-use colorify::{Style, Foreground, colorify}
+use colorify::colorify::{Style, Graphic, colorify}
 
 pub fn hello_world() {
   let style = Style{
