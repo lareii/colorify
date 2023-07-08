@@ -1,0 +1,7 @@
+use cpp "vtp.h"
+
+cpp fn enable_vtp(): bool
+
+fn init() {
+  cpp.enable_vtp()
+}

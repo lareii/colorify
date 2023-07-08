@@ -1,0 +1,27 @@
+pub struct Style {
+  pub fg: Foreground
+  pub bg: Background
+  pub fonts: []Font
+  pub graphics: []Graphic
+}
+
+pub fn colorify(text: str, style: Style): str {
+  let mut string: str = ""
+
+  for _, font in style.fonts {
+    string += (str)(font)
+  }
+
+  for _, graphic in style.graphics {
+    string += (str)(graphic)
+  }
+
+  string += (str)(style.fg)
+  string += (str)(style.bg)
+
+  string += text
+
+  string += (str)(Graphic.Reset)
+
+  ret string
+}

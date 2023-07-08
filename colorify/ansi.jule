@@ -1,0 +1,62 @@
+pub enum Foreground: str {
+	Default       = "",
+
+  Black         = "\033[30m",
+	Red           = "\033[31m",
+	Green         = "\033[32m",
+	Yellow        = "\033[33m",
+	Blue          = "\033[34m",
+	Magenta       = "\033[35m",
+	Cyan          = "\033[36m",
+	White         = "\033[37m",
+
+	BrightBlack   = "\033[90m",
+	BrightRed     = "\033[91m",
+	BrightGreen   = "\033[92m",
+	BrightYellow  = "\033[93m",
+	BrightBlue    = "\033[94m",
+	BrightMagenta = "\033[95m",
+	BrightCyan    = "\033[96m",
+	BrightWhite   = "\033[97m",
+}
+
+pub enum Background: str {
+	Default       = "",
+
+	Black         = "\033[40m",
+	Red           = "\033[41m",
+	Green         = "\033[42m",
+	Yellow        = "\033[43m",
+	Blue          = "\033[44m",
+	Magenta       = "\033[45m",
+	Cyan          = "\033[46m",
+	White         = "\033[47m",
+
+	BrightBlack   = "\033[100m",
+	BrightRed     = "\033[101m",
+	BrightGreen   = "\033[102m",
+	BrightYellow  = "\033[103m",
+	BrightBlue    = "\033[104m",
+	BrightMagenta = "\033[105m",
+	BrightCyan    = "\033[106m",
+	BrightWhite   = "\033[107m",
+}
+
+pub enum Font: str {
+	Default       = "",
+	
+	Bold          = "\033[1m",
+	Faint         = "\033[2m",
+	Italic        = "\033[3m",
+	Underline     = "\033[4m",
+	Strikethrough = "\033[9m",
+}
+
+pub enum Graphic: str {
+	Default       = "",
+
+	Reset         = "\033[0m",
+	Blink         = "\033[5m",
+	Reverse       = "\033[7m",
+	Hidden        = "\033[8m",
+}

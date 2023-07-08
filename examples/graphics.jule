@@ -1,0 +1,9 @@
+use colorify::{Style, Graphic, colorify}
+
+pub fn graphics() {
+  let style = Style{
+    graphics: [Graphic.Blink]
+  }
+
+  outln(colorify("Hello, world!", style))
+}

@@ -1,0 +1,6 @@
+use examples::{graphics, hello_world}
+
+fn main() {
+  graphics()
+  hello_world()
+}
