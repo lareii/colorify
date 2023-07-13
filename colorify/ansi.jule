@@ -1,7 +1,7 @@
 pub enum Foreground: str {
 	Default       = "",
 
-  Black         = "\033[30m",
+        Black         = "\033[30m",
 	Red           = "\033[31m",
 	Green         = "\033[32m",
 	Yellow        = "\033[33m",
