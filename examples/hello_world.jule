@@ -1,6 +1,6 @@
 use colorify::colorify::{Style, Foreground, colorify}
 
-pub fn hello_world() {
+fn main() {
   let style = Style{
     fg: Foreground.BrightBlack
   }
