@@ -37,10 +37,10 @@ fn main() {
 See the `examples/` directory for more usage examples.
 
 ## Contributing
-We welcome contributions to the colorify package! To contribute, simply fork the repository, make your desired changes, and submit a pull request.
+We welcome contributions to the **colorify** package! To contribute, simply fork the repository, make your desired changes, and submit a pull request.
 
 ## License
-This project is licensed under the MIT License. For more information, see the LICENSE file.
+This project is licensed under the MIT License. For more information, see the [LICENSE](https://github.com/lareii/colorify/blob/master/LICENSE) file.
 
 ## Contact
 If you have any questions or suggestions open an issue on the [GitHub Issues](https://github.com/lareii/colorify/issues) page.
