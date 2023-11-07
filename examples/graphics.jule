@@ -1,9 +1,0 @@
-use colorify::colorify::{Style, Graphic, colorify}
-
-fn main() {
-  let style = Style{
-    graphics: [Graphic.Blink]
-  }
-
-  outln(colorify("Blink!", style))
-}

@@ -1,9 +1,0 @@
-use colorify::colorify::{Style, Foreground, colorify}
-
-fn main() {
-  let style = Style{
-    fg: Foreground.BrightBlack
-  }
-
-  outln(colorify("Hello, world!", style))
-}
