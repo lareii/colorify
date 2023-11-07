@@ -1,4 +1,4 @@
-# 🎨 colorify
+# colorify
 
 **colorify** is a package that allows you to produce colorful output using ANSI codes. This package is designed to simplify the process of generating colorful outputs using the [Jule Programming Language](https://jule.dev/).
 
