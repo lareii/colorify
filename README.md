@@ -11,28 +11,24 @@
 To use the colorify package, follow these steps:
 1. Download or clone the colorify package from the GitHub repository.
 2. Add the colorify directory to the root directory of your project.
-3. Include the colorify package in your project's source files.
-4. Ta-da!
+3. Include the colorify package in your project's source files. (don't forget to run `julec mod init`)
+4. Ta-da! You're ready to use the colorify package in your project.
 
 ## Usage
 Below is an example showcasing the basic usage of the colorify package:
 ```rs
 // include the package
-use colorify::colorify::{Style, Foreground, Font, colorify}
+use "colorify"
 
 fn main() {
+	// create a variable named "style" using the Style struct
+	let style = colorify::Style{
+		Foreground: colorify::Foreground.BrightBlack,
+		Fonts: [colorify::Font.Bold]
+	}
 
-  // create a variable named "style" using the Style struct
-  let style = Style{
-    fg: Foreground.BrightBlack,
-    fonts: [Font.Bold]
-  }
-
-  // colorify your text with your style and print it
-  outln(
-    colorify("Hello, world!", style)
-  )
-
+	// colorify your text with your style and print it
+	println(colorify::Colorify("Hello, Jule!", style))
 }
 ```
 

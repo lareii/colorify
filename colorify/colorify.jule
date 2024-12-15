@@ -1,27 +1,23 @@
-pub struct Style {
-  pub fg: Foreground
-  pub bg: Background
-  pub fonts: []Font
-  pub graphics: []Graphic
+struct Style {
+	Foreground:	Foreground
+	Background:	Background
+	Fonts:		[]Font
+	Graphics:	[]Graphic
 }
 
-pub fn colorify(text: str, style: Style): str {
-  let mut string: str = ""
+fn Colorify(s: str, style: Style): str {
+	let mut new_s: str = ""
 
-  for _, font in style.fonts {
-    string += (str)(font)
-  }
+	for _, font in style.Fonts {
+		new_s += str(font)
+	}
+	for _, graphic in style.Graphics {
+		new_s += str(graphic)
+	}
+	new_s += str(style.Foreground)
+	new_s += str(style.Background)
+	new_s += s
+	new_s += str(Graphic.Reset)
 
-  for _, graphic in style.graphics {
-    string += (str)(graphic)
-  }
-
-  string += (str)(style.fg)
-  string += (str)(style.bg)
-
-  string += text
-
-  string += (str)(Graphic.Reset)
-
-  ret string
+	ret new_s
 }
