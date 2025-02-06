@@ -1,8 +1,35 @@
+use "std/fmt"
+
 struct Style {
-	Foreground:	Foreground
-	Background:	Background
-	Fonts:		[]Font
-	Graphics:	[]Graphic
+	Foreground:    Foreground
+	Background:    Background
+	Fonts:         []Font
+	Graphics:      []Graphic
+	foregroundRGB: str
+	backgroundRGB: str
+}
+
+impl Style {
+	fn ForegroundRGB(mut self, r: i16, g: i16, b: i16)!: Style {
+		self.foregroundRGB = rgbToStr(r, g, b, "38") else {
+			error(error)
+		}
+		ret self
+	}
+
+	fn BackgroundRGB(mut self, r: i16, g: i16, b: i16)!: Style {
+		self.backgroundRGB = rgbToStr(r, g, b, "48") else {
+			error(error)
+		}
+		ret self
+	}
+}
+
+fn rgbToStr(r: i16, g: i16, b: i16, t: str)!: str {
+	if r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 {
+		error("RGB value must not be less than 0 or greater than 255")
+	}
+	ret fmt::Format("\033[{};2;{};{};{}m", t, r, g, b)
 }
 
 fn Colorify(s: str, style: Style): str {
@@ -14,8 +41,18 @@ fn Colorify(s: str, style: Style): str {
 	for _, graphic in style.Graphics {
 		new_s += str(graphic)
 	}
-	new_s += str(style.Foreground)
-	new_s += str(style.Background)
+
+	if style.foregroundRGB != "" {
+		new_s += str(style.foregroundRGB)
+	} else {
+		new_s += str(style.Foreground)
+	}
+	if style.backgroundRGB != "" {
+		new_s += str(style.backgroundRGB)
+	} else {
+		new_s += str(style.Background)
+	}
+
 	new_s += s
 	new_s += str(Graphic.Reset)
 

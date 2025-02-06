@@ -24,7 +24,8 @@ fn main() {
 	let style = colorify::Style{
 		Foreground: colorify::Foreground.BrightBlack,
 		Fonts: [colorify::Font.Bold]
-	}
+	}.BackgroundRGB(
+		95, 116, 137)!
 
 	// colorify your text with your style and print it
 	println(colorify::Colorify("Hello, Jule!", style))
