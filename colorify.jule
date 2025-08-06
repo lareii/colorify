@@ -10,18 +10,18 @@ struct Style {
 }
 
 impl Style {
-	fn ForegroundRGB(mut self, r: i16, g: i16, b: i16)!: Style {
+	fn ForegroundRGB(mut *self, r: i16, g: i16, b: i16)!: Style {
 		self.foregroundRGB = rgbToStr(r, g, b, "38") else {
 			error(error)
 		}
-		ret self
+		ret *self
 	}
 
-	fn BackgroundRGB(mut self, r: i16, g: i16, b: i16)!: Style {
+	fn BackgroundRGB(mut *self, r: i16, g: i16, b: i16)!: Style {
 		self.backgroundRGB = rgbToStr(r, g, b, "48") else {
 			error(error)
 		}
-		ret self
+		ret *self
 	}
 }
 
@@ -29,7 +29,7 @@ fn rgbToStr(r: i16, g: i16, b: i16, t: str)!: str {
 	if r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 {
 		error("RGB value must not be less than 0 or greater than 255")
 	}
-	ret fmt::Format("\033[{};2;{};{};{}m", t, r, g, b)
+	ret fmt::Sprintf("\033[{};2;{};{};{}m", t, r, g, b)
 }
 
 fn Colorify(s: str, style: Style): str {
